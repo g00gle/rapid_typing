@@ -7,7 +7,7 @@ export default class Application {
 
     this.openClass = 'open';
 
-    this.mode = 'novice';
+    this.mode = 'beginner';
 
     this.setMode(this.mode);
 
