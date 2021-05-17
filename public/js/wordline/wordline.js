@@ -16,7 +16,7 @@ export default class Wordline {
     this.errorStats = new ErrorStats();
     this.speedStats = new SpeedStats();
     this.errorCounter = new Counter();
-    this.generator = new Generator({ interval: 6e4, number: 8 });
+    this.generator = new Generator({ interval: 6e4, number: 1 });
     this.keyboard = new Keyboard();
     this.letters = '';
 
