@@ -58,6 +58,7 @@ export default class Wordline {
      
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
+        msg.rate  = 1.5;
         msg.text = String.fromCharCode(e.charCode);
         var voices = window.speechSynthesis.getVoices();
         msg.voice = voices[1];
