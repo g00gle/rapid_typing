@@ -52,14 +52,18 @@ export default class Wordline {
       console.log("pressed:"+String.fromCharCode(e.charCode));//debug in console
       
       //https://dev.to/asaoluelijah/text-to-speech-in-3-lines-of-javascript-b8h
-      speechSynthesis.getVoices().forEach(function(voice) {
-        console.log(voice.name, voice.default ? voice.default :'');
-      });
+      //speechSynthesis.getVoices().forEach(function(voice) {
+      //  console.log(voice.name, voice.default ? voice.default :'');
+      //});
      
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
         msg.text = String.fromCharCode(e.charCode) ;
-        window.speechSynthesis.speak(msg)
+        speechSynthesis.getVoices().forEach(function(voice) {
+            console.log(voice.name, voice.default ? voice.default :'');
+            window.speechSynthesis.speak(msg);
+        });
+       // window.speechSynthesis.speak(msg)
          // Speech Synthesis supported 🎉
         
         console.log("speech supported");
