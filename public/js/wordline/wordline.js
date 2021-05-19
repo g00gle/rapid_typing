@@ -47,7 +47,7 @@ export default class Wordline {
       if(this.letters.length == $(`.${this.untypedClass}`).length && e.keyCode != 13) {
         this.timeStart = Date.now();
       }
-
+      console.log("pressed:"+String.fromCharCode(e.charCode));
       let isOk = this.check(String.fromCharCode(e.charCode));
 
       if(!isOk) {
