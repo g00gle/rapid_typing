@@ -61,6 +61,7 @@ export default class Wordline {
         msg.text = String.fromCharCode(e.charCode) ;
         speechSynthesis.getVoices().forEach(function(voice) {
             console.log(voice.name, voice.default ? voice.default :'');
+            msg.voice = voice; 
             window.speechSynthesis.speak(msg);
         });
        // window.speechSynthesis.speak(msg)
