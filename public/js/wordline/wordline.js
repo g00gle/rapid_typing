@@ -49,6 +49,9 @@ export default class Wordline {
       }
       console.log("pressed:"+String.fromCharCode(e.charCode));
       if ('speechSynthesis' in window) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = "You Pressed " + String.fromCharCode(e.charCode) ;
+        window.speechSynthesis.speak(msg)
        // Speech Synthesis supported 🎉
         console.log("speech supported");
       }else{
