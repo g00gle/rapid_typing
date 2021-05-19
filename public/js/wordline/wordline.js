@@ -62,7 +62,9 @@ export default class Wordline {
         speechSynthesis.getVoices().forEach(function(voice) {
             console.log(voice.name, voice.default ? voice.default :'');
             msg.voice = voice; 
-            window.speechSynthesis.speak(msg);
+            //window.speechSynthesis.speak(msg);
+            window.speechSynthesis.speak("hello dave");
+            await sleep (2000)
         });
        // window.speechSynthesis.speak(msg)
          // Speech Synthesis supported 🎉
