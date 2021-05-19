@@ -52,16 +52,10 @@ export default class Wordline {
       console.log("pressed:"+String.fromCharCode(e.charCode));//debug in console
       
       //https://dev.to/asaoluelijah/text-to-speech-in-3-lines-of-javascript-b8h
-      var voices = window.speechSynthesis.getVoices();
-      var voice_names = voices.map(x => [x.name, x.lang].join("\t")).join("\r\n");
-    
-      console.log("voice=" + voice_names);
-      
-      msg.voice = voices[10]; 
-      msg.volume = 1; // From 0 to 1
-      msg.rate = 1; // From 0.1 to 10
-      msg.pitch = 2; // From 0 to 2
-      msg.lang = 'es';
+      speechSynthesis.getVoices().forEach(function(voice) {
+        console.log(voice.name, voice.default ? voice.default :'');
+      });
+     
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
         msg.text = String.fromCharCode(e.charCode) ;
