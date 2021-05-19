@@ -53,7 +53,7 @@ export default class Wordline {
       
       //https://dev.to/asaoluelijah/text-to-speech-in-3-lines-of-javascript-b8h
       var voices = window.speechSynthesis.getVoices();
-      console.log("voice=" + window.speechSynthesis.getVoices().map(x => [x.name, x.lang].join("\t")).join("\r\n");
+      console.log("voice=" + window.speechSynthesis.getVoices().map(x => [x.name, x.lang].join("\t")).join("\r\n"));
       
       msg.voice = voices[10]; 
       msg.volume = 1; // From 0 to 1
