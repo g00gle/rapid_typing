@@ -60,7 +60,7 @@ export default class Wordline {
         var msg = new SpeechSynthesisUtterance();
         msg.text = String.fromCharCode(e.charCode);
         var voices = window.speechSynthesis.getVoices();
-        msg.voice = voices[3];
+        msg.voice = voices[1];
         window.speechSynthesis.speak(msg)
          // Speech Synthesis supported 🎉
         
