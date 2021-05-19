@@ -58,17 +58,10 @@ export default class Wordline {
      
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
-        //msg.text = String.fromCharCode(e.charCode) ;
-        msg.text = "hello spain";
-        speechSynthesis.getVoices().forEach(function(voice) {
-            console.log(voice.name, voice.default ? voice.default :'');
-            msg.voice = voice; 
-            //window.speechSynthesis.speak(msg);
-            msg.text = "hello spain";
-            window.speechSynthesis.speak(msg);
-            //await sleep(2000);
-        });
-       // window.speechSynthesis.speak(msg)
+        msg.text = String.fromCharCode(e.charCode);
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[3];
+        window.speechSynthesis.speak(msg)
          // Speech Synthesis supported 🎉
         
         console.log("speech supported");
