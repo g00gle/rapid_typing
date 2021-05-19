@@ -48,6 +48,13 @@ export default class Wordline {
         this.timeStart = Date.now();
       }
       console.log("pressed:"+String.fromCharCode(e.charCode));
+      if ('speechSynthesis' in window) {
+       // Speech Synthesis supported 🎉
+        console.log("speech supported");
+      }else{
+        // Speech Synthesis Not Supported 😣
+        alert("Sorry, your browser doesn't support text to speech!");
+      }
       let isOk = this.check(String.fromCharCode(e.charCode));
 
       if(!isOk) {
