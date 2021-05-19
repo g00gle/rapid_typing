@@ -47,12 +47,17 @@ export default class Wordline {
       if(this.letters.length == $(`.${this.untypedClass}`).length && e.keyCode != 13) {
         this.timeStart = Date.now();
       }
-      console.log("pressed:"+String.fromCharCode(e.charCode));
+      
+
+      console.log("pressed:"+String.fromCharCode(e.charCode));//debug in console
+      
+      //https://dev.to/asaoluelijah/text-to-speech-in-3-lines-of-javascript-b8h
       if ('speechSynthesis' in window) {
         var msg = new SpeechSynthesisUtterance();
-        msg.text = "You Pressed " + String.fromCharCode(e.charCode) ;
+        msg.text = String.fromCharCode(e.charCode) ;
         window.speechSynthesis.speak(msg)
-       // Speech Synthesis supported 🎉
+         // Speech Synthesis supported 🎉
+        
         console.log("speech supported");
       }else{
         // Speech Synthesis Not Supported 😣
