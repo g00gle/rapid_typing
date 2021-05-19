@@ -64,7 +64,7 @@ export default class Wordline {
             msg.voice = voice; 
             //window.speechSynthesis.speak(msg);
             window.speechSynthesis.speak("hello dave");
-            await sleep(2000);
+            //await sleep(2000);
         });
        // window.speechSynthesis.speak(msg)
          // Speech Synthesis supported 🎉
